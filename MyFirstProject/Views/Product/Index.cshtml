@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyFirstProject.Models.Product>
+
+@{
+    ViewData["Title"] = "List all Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-sm-12 mb-5 ">
+
+            <div class="card" style="width: 18rem;">
+                <a asp-action="GetById" asp-controller="Product" asp-route-id="@item.Id">
+                    @*asp-route-id is customized
+                        asp-conroller we write the contoller name without ""Controller"" word*@
+                    <img src=@item.PhotoPath class="card-img-top" alt="..." style="height:400px">
+                </a>
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">@item.Name</h5>
+                        <h6 class="">@String.Format("{0:C}", @item.Price)</h6>
+                        @*//string format to show price in a formated ways in  Dollar sign $
+                C is for Currency *@
+
+                    </div>
+                    <br />
+                    <p class="card-text">@item.Description</p>
+                    <a asp-action="GetById" asp-controller="Product" asp-route-id="@item." class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+
+</div>

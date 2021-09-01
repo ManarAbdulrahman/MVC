@@ -1,0 +1,2 @@
+Scaffold-DbContext "Server=.;Database=BookStoresDB;
+Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

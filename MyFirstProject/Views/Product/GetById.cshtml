@@ -1,0 +1,60 @@
+﻿@model MyFirstProject.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetById</h1>
+<div class="container-fluid">
+    <div class="card mb-3" style="max-width: 540px;">
+        @*nubers of mb are x10 to give a result in px*@
+        <div class="class-header">
+            Product Details
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src=@Model.PhotoPath class="card-img" alt="Product"  width="300" height="100%" style="border-right:1px" >
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <h6 class="card-title">Price: @String.Format("{0:C}", @Model.Price) </h6>
+                    <p class="card-text">@Model.Description</p>
+                    <br />
+                    <table class=" table-bordered w-100">
+                        <thead class="text-sm-center">
+                            <tr>
+                                <th class="w-25">Type</th>
+                                <td>@Model.Type</td>
+                            </tr>
+                            <tr>
+                                <th class="w-25">Water Resistent</th>
+                                <td>@Model.WaterResistanr</td>
+                            </tr>
+                            <tr>
+                                <th class="w-25">Warrenty</th>
+                                <td>@Model.Warrenty</td>
+                            </tr>
+                            <tr>
+                                <th class="w-25">Color</th>
+                                <td>@Model.Color</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <br />
+                    <br />
+                    <br />
+
+                    <h5>Video</h5>
+                    <div>
+                        <video src="@Model.VideoPath" width=""
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
